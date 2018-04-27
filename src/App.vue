@@ -1,23 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <mu-appbar title="Archy">
+      <mu-icon-button icon="menu" slot="left" />
+      <mu-icon-button icon="expand_more" slot="right" />
+    </mu-appbar>
+
     <router-view/>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App'
-}
-</script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.mu-appbar {
+  background: #f8462e;
 }
 </style>

@@ -1,113 +1,57 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+  <div class="hello container">
+     <mu-text-field hintText="Search" type="text" fullWidth icon="search"/><br/>
+    <div class="row">
+      <div v-for="(img) in imgs" :key="img" class="col-4">
+        <mu-card>
+          <mu-card-media title="Suspense Mosque" subTitle="Marceline">
+            <img :src="img" />
+          </mu-card-media>
+          <mu-card-text>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </mu-card-text>
+          <mu-card-actions>
+            <mu-flat-button label="Show on map" />
+            <mu-flat-button label="More info" />
+          </mu-card-actions>
+        </mu-card>
+      </div>
+    </div>
+    <br>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
+  name: "HelloWorld",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+      msg: "Welcome to Your Vue.js App",
+      imgs: [
+        "https://i.imgur.com/AGpP2lS.jpg",
+        "https://i.imgur.com/GJyGwcq.jpg",
+        "https://i.imgur.com/YidfAq2.jpg"
+      ]
+    };
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.mu-card-media{
+position: relative;
+height: 300px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
+button {
+  font-weight: bold;
 }
 a {
   color: #42b983;
+}
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 </style>
